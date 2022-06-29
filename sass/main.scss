@@ -1,0 +1,180 @@
+$light-01: #fff;
+$light-02: #ffeac3;
+$light-03: #fdf6a6;
+$light-04: #fffac4;
+$light-05: #fbf2d8;
+$light-06: #ffd89e;
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap');
+
+$font:'Roboto',
+sans-serif;
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: black;
+    position: absolute;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .copy {
+        position: absolute;
+        color: white;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        font-family: $font;
+
+        h3 {
+            text-transform: uppercase;
+            font-weight: 100;
+            text-align: center;
+            font-size: 45px;
+        }
+
+        p {
+            font-size: 16px;
+            text-align: center;
+        }
+    }
+
+    .box {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        float: left;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            transition: 2s ease-in-out;
+            width: 100%;
+            height: 100%;
+        }
+
+        &:before {
+            background-image: url(../assets/lamp1.png);
+            background-size: cover;
+            opacity: 0.3;
+        }
+
+        &:after {
+            background-color: white;
+            border-radius: 100%;
+            width: 44px;
+            height: 44px;
+            opacity: 1;
+            mix-blend-mode: difference;
+            box-shadow: 0px 0px 20px 3px white, 0px 0px 5px 0px white;
+            opacity: 0;
+        }
+
+        &:nth-child(odd) {
+            &:before {
+                background-image: url(../assets/lamp2.png);
+            }
+
+            &:after {
+                background-color: $light-01;
+                box-shadow: 0px 0px 20px 3px $light-01, 0px 0px 5px 0px $light-01;
+            }
+        }
+
+        &:nth-child(4n + 1) {
+            &:before {
+                background-image: url(../assets/lamp3.png);
+            }
+
+            &:after {
+                background-color: $light-02;
+                box-shadow: 0px 0px 20px 3px $light-02, 0px 0px 5px 0px $light-02;
+            }
+        }
+
+        &:nth-child(2n + 2) {
+            &:before {
+                background-image: url(../assets/lamp4.png);
+            }
+
+            &:after {
+                background-color: $light-03;
+                box-shadow: 0px 0px 20px 3px $light-03, 0px 0px 5px 0px $light-03;
+            }
+        }
+
+        &:nth-child(3n + 3) {
+            &:before {
+                background-image: url(../assets/lamp1.png);
+            }
+
+            &:after {
+                background-color: $light-04;
+                box-shadow: 0px 0px 20px 3px $light-04, 0px 0px 5px 0px $light-04;
+            }
+        }
+
+
+        &:nth-child(4n + 4) {
+            &:before {
+                background-image: url(../assets/lamp2.png);
+            }
+
+            &:after {
+                background-color: $light-05;
+                box-shadow: 0px 0px 20px 3px $light-05, 0px 0px 5px 0px $light-05;
+            }
+        }
+
+        &:nth-child(5n +5) {
+            &:before {
+                background-image: url(../assets/lamp3.png);
+            }
+
+            &:after {
+                background-color: $light-06;
+                box-shadow: 0px 0px 20px 3px $light-06, 0px 0px 5px 0px $light-06;
+            }
+        }
+
+
+
+
+
+        &:hover {
+
+
+            &:before {
+                transition: 0s ease-in-out;
+                opacity: 1;
+            }
+
+            &:after {
+                transition: 0s ease-in-out;
+                opacity: 1;
+                width: 44px;
+                height: 44px;
+            }
+        }
+
+
+    }
+}
